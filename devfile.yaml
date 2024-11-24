@@ -1,0 +1,31 @@
+commands:
+- exec:
+    commandLine: npm install
+    component: runtime
+    group:
+      isDefault: true
+      kind: build
+    workingDir: ${PROJECT_SOURCE}
+  id: install
+- exec:
+    commandLine: npm start
+    component: runtime
+    group:
+      isDefault: true
+      kind: run
+    workingDir: ${PROJECT_SOURCE}
+  id: run
+components:
+- container:
+    args:
+    - tail
+    - -f
+    - /dev/null
+    endpoints:
+    - name: http-node
+      protocol: http
+      targetPort: 3000
+    image: registry.access.redhat.com/ubi8/nodejs-18:1-32
+    mountSources: true
+  name: runtime
+schemaVersion: 2.2.2
