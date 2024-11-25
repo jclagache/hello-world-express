@@ -26,6 +26,11 @@ components:
       protocol: http
       targetPort: 3000
     image: registry.access.redhat.com/ubi8/nodejs-18:1-32
+    env:
+    - name: HTTP_PROXY
+      value: "http://eu2.proxy.cloud.ad:3128"
+    - name: HTTPS_PROXY
+      value: "http://eu2.proxy.cloud.ad:3128"
     mountSources: true
   name: runtime
-schemaVersion: 2.2.2
+schemaVersion: 2.2.0
