@@ -1,6 +1,6 @@
 schemaVersion: 2.2.0
 variables:
-  proxy: http://eu2.proxy.cloud.ad:3128
+  proxy: "http://eu2.proxy.cloud.ad:3128"
 commands:
 - exec:
     commandLine: npm install
@@ -42,9 +42,9 @@ components:
     image: registry.access.redhat.com/ubi8/nodejs-18:1-32
     env:
     - name: HTTP_PROXY
-      value: {{proxy}}
+      value: "{{proxy}}"
     - name: HTTPS_PROXY
-      value: {{proxy}}
+      value: "{{proxy}}"
     - name: DEBUG_PORT
       value: '5858'
     mountSources: true
