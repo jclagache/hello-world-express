@@ -2,7 +2,9 @@
   "name": "hello-world-express",
   "version": "1.0.0",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "debug": "node --inspect=${DEBUG_PORT} app.js",
+    "test": "node test/test.js"
   },
   "dependencies": {
     "express": "~4.16.1"
