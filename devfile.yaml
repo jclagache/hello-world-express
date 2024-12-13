@@ -26,6 +26,14 @@ commands:
         kind: debug
         isDefault: true
     id: debug
+  - exec:
+      component: runtime
+      commandLine: npm test
+      workingDir: ${PROJECT_SOURCE}
+      group:
+        kind: test
+        isDefault: true
+    id: test
 components:
   - name: runtime
     container:
